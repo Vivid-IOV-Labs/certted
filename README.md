@@ -10,4 +10,5 @@ This application uses **WalletConnect**, **Google Firestore** and the **XRP Ledg
 ## Local devleopment
 
 npm install
+
 npm run dev
