@@ -53,6 +53,12 @@ export default async function main(o) {
 
     const signed = wallet.sign(prepared)
 
+     // Submit signed blob --------------------------------------------------------
+     const tx = await client.submitAndWait(signed.tx_blob)
+
+     // Check transaction results -------------------------------------------------
+     console.log("Transaction result:", tx.result.meta.TransactionResult)
+
     client.disconnect()
 
     return `https://devnet.xrpl.org/transactions/${signed.hash}/detailed`
